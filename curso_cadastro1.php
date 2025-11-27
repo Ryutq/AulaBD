@@ -11,7 +11,7 @@
     <?php include "menu.php" ?>
 
     <div class="conteudo">
-        <h3>Confirmação de cadastro</h3>
+        <h3>Confirmação de cadastro do curso</h3>
 
     <?php
 
@@ -19,23 +19,21 @@
         {
             include "conexao.php";
 
-            $nome = $_REQUEST["nome"];
-            $cidade = $_REQUEST["cidade"];
-            $estado = $_REQUEST["estado"];
+            $cursos = $_REQUEST["cursos"];
+            $coordenador = $_REQUEST["coordenador"];
 
-            $sql = "insert into alunos (nome, cidade, estado) values (:nome, :cidade, :estado)";
+            $sql = "insert into cursos (cursos, coordenador) values (:cursos, :coordenador)";
 
             $result = $conexao->prepare($sql);
-            $result->bindValue(":nome", $nome);
-            $result->bindValue(":cidade", $cidade);
-            $result->bindValue(":estado", $estado); 
+            $result->bindValue(":cursos", $cursos);
+            $result->bindValue(":coordenador", $coordenador); 
             $result->execute();
 
-            echo "Aluno cadastrado com sucesso!<br>";
+            echo "Curso cadastrado com sucesso!<br>";
         }
     ?>
 
-        <a href="aluno_cadastro.php">Voltar</a>
+        <a href="curso_cadastro.php">Voltar</a>
     </div>
     
 </body>

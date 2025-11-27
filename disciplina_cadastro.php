@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    
          <h1>Cadastro de Disciplinas</h1>
 
     <form method="POST" action="aluno_cadastro.php">
